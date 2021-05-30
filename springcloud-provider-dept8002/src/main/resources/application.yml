@@ -1,0 +1,35 @@
+server:
+  port: 8002
+
+
+mybatis:
+  type-aliases-package: com.chao.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: false
+
+
+
+spring:
+  application:
+    name: springcloud-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db02?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+
+
+#Eureka的配置，服务注册到哪里
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:     #修改注册中心的status
+    instance-id: springcloud-provider-dept8002
+
+#info配置   (配置信息，可以看到注册中心的服务信息)
+info:
+  app.name: chaoge
+  company: likongkeji
