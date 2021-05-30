@@ -21,7 +21,7 @@ public class Dept implements Serializable {
     //这个数据存在那个数据库的字段   微服务，一个服务对应一个数据库
     private String db_source;
     private String username;
-
+    private String password;
     /**
      * 链式写法
      *        Dept dept = new Dept();
